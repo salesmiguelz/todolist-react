@@ -1,0 +1,52 @@
+.tasksListContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tasksList {
+    margin-top: 80px;
+    align-items: center;
+    width: 60%;
+}
+
+.tasksInfo {
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.tasksInfo span {
+    background-color: var(--gray-400);
+    border-radius: 10px;
+    color: white;
+    padding: 5px 12px;
+    margin-left: 8px;
+}
+
+.tasksCreated {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.tasksDone {
+    font-weight: bold;
+    color: var(--purple);
+}
+
+hr {
+    border-color: var(--gray-300);
+}
+
+.noTasksMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--gray-300);
+}
+
+.noTasksMessage img {
+    margin-top: 50px;
+    margin-bottom: 12px;
+}
