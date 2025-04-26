@@ -1,0 +1,24 @@
+.createButtonContainer {
+    width: 90px;
+    height: 42px;
+    background-color: var(--blue-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-100);
+    border-radius: 4px;
+    gap: 8px;
+    padding: 6px 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.createButtonContainer:hover {
+    background-color: var(--blue);
+}
+
+.createButtonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
