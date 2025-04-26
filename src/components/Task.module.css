@@ -8,6 +8,7 @@
     background-color: var(--gray-500);
     border-radius: 8px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .task p {
@@ -21,8 +22,8 @@
 }
 
 .taskPendingIcon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     box-sizing: border-box;
     border: 3px solid var(--blue);
     border-radius: 50%;
@@ -33,13 +34,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
-    background-color: var(--purple);
+    width: 18px;
+    height: 18px;
+    background-color: var(--purple-dark);
     border-radius: 50%;
     font-size: 100px;
     color: white;
     font-weight: bold;
+}
+
+.taskDoneIcon:hover {
+    background-color: var(--purple);
 }
 
 .taskText {
@@ -61,5 +66,16 @@
 
 
 .taskTrashIcon {
-    color: var(--gray-300)
+    width: 30px;
+    height: 30px;
+    color: var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskTrashIcon:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+    border-radius: 6px;
 }

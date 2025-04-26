@@ -19,7 +19,7 @@ export function Task(){
                         taskDone ? (
                             <div className={styles.taskDoneIcon}>
                                 <MdDone 
-                                    size={16}
+                                    size={12}
                                 />
                             </div>
                         ) : (
@@ -33,7 +33,7 @@ export function Task(){
 
                 <div className={styles.taskTrashIcon}>
                     <FaRegTrashAlt 
-                        size={17}
+                        size={15}
                     />
                 </div>
             </div>
