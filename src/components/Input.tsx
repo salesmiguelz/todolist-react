@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import styles from "./Input.module.css"
 
 export function Input(){

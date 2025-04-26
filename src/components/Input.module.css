@@ -3,10 +3,10 @@
     color: var(--gray-300);
     border: none;
     outline: none;
-    padding: 4px 16px;
+    padding: 0px 16px;
     width: 451px;
     height: 54px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 16px;
 }
 
