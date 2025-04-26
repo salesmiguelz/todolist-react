@@ -1,0 +1,17 @@
+.navbarContainer {
+    position: relative;
+    background-color: black;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    display: flex;
+    gap: 8px;
+}
