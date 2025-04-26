@@ -9,9 +9,8 @@
 }
 
 .inputContainer {
-    position: absolute;
-    top: 80%;
-    left: 30%;
+    position: fixed;
+    top: 125px;
     display: flex;
     gap: 8px;
 }
