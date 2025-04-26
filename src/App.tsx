@@ -1,15 +1,12 @@
 import "./global.css"
-import { Input } from "./components/Input"
-import { Task } from "./components/Task"
+import { Navbar } from "./components/Navbar"
+import { TasksList } from "./components/TasksList"
 
 function App() {
   return (
     <>
-      <Input
-        placeholder="Adicione uma nova tarefa"
-      />
-      <Task 
-      />
+      <Navbar />
+      <TasksList />
     </>
   )
 }
