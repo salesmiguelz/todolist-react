@@ -1,9 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, useState } from "react"
 import styles from "./Input.module.css"
 
-type InputProps = InputHTMLAttributes<HTMLInputElement>
-
-export function Input({...props}: InputProps){
+export function Input(){
     const [inputText, setInputText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
@@ -22,7 +20,7 @@ export function Input({...props}: InputProps){
         <>
             <input 
                 type="text" 
-                placeholder={props.placeholder} 
+                placeholder={"Adicione uma nova tarefa"} 
                 value={inputText} 
                 onChange={handleInputTextChange}
                 onFocus={handleOnFocus}
