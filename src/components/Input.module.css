@@ -1,0 +1,23 @@
+.input {
+    background-color: var(--gray-500);
+    color: var(--gray-300);
+    border: none;
+    outline: none;
+    padding: 4px 16px;
+    width: 451px;
+    height: 54px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.inputActive {
+    background-color: var(--gray-500);
+    color: var(--gray-100);
+    border: none;
+    outline: 2px solid var(--purple);
+    padding: 4px 16px;
+    width: 451px;
+    height: 54px;
+    border-radius: 8px;
+    font-size: 16px;
+}
