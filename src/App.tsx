@@ -17,6 +17,7 @@ function App() {
           id: crypto.randomUUID(),
           title: taskTitle,
           isDone: false,
+          deleteTask: handleDeleteTask
         }
       ]);
       setConfirmTaskCreation(false); 
@@ -31,6 +32,12 @@ function App() {
   function handleSetConfirmTaskCreation(){
     setConfirmTaskCreation(true);
  }
+
+  function handleDeleteTask(taskId: string){
+    setTasks(tasks => {
+      return tasks.filter(task => task.id !== taskId)
+    })
+  }
   return (
     <>
       <Navbar
@@ -39,6 +46,7 @@ function App() {
       />
       <TasksList 
         tasks={tasks}
+        handleDeleteTask={handleDeleteTask}
       />
     </>
   )

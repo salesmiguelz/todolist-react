@@ -8,15 +8,18 @@ export interface TaskType{
     id: string
     title: string
     isDone?: boolean
+    deleteTask: (taskId: string) => void
 }
 
-export function Task({title, isDone}: TaskType){
+export function Task({id, title, isDone, deleteTask}: TaskType){
     const [taskDone, setTaskDone] = useState(isDone);
 
     function handleTaskStatus(){
         setTaskDone(!taskDone)
     }
-
+    function handleDeleteTask(){
+        deleteTask(id)
+    }
     return (
         <>
             <div className={styles.task} onClick={handleTaskStatus}>
@@ -37,7 +40,7 @@ export function Task({title, isDone}: TaskType){
                     <p>{title}</p>
                 </div>
 
-                <div className={styles.taskTrashIcon}>
+                <div className={styles.taskTrashIcon} onClick={handleDeleteTask}>
                     <FaRegTrashAlt 
                         size={15}
                     />

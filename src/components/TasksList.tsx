@@ -4,9 +4,11 @@ import { Task, TaskType } from "./Task";
 
 interface TasksListProps{
     tasks: TaskType[]
+    handleDeleteTask: (taskId: string) => void
 }
 
-export function TasksList({tasks}: TasksListProps){
+
+export function TasksList({tasks, handleDeleteTask}: TasksListProps){
     return (
           <div className={styles.tasksListContainer}>
             <div className={styles.tasksList}>
@@ -29,6 +31,7 @@ export function TasksList({tasks}: TasksListProps){
                                 id={task.id}
                                 title={task.title}
                                 isDone={task.isDone}
+                                deleteTask={handleDeleteTask}
                             />
                             ))}
                         </div>
