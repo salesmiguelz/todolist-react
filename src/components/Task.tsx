@@ -4,8 +4,14 @@ import { MdDone } from "react-icons/md";
 
 import styles from "./Task.module.css"
 
-export function Task(){
-    const [taskDone, setTaskDone] = useState(true);
+export interface TaskType{
+    id: string
+    title: string
+    isDone?: boolean
+}
+
+export function Task({title, isDone}: TaskType){
+    const [taskDone, setTaskDone] = useState(isDone);
 
     function handleTaskStatus(){
         setTaskDone(!taskDone)
@@ -28,7 +34,7 @@ export function Task(){
                     }
                 </div>
                 <div className={taskDone ? styles.taskCrossedText : styles.taskText}>
-                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <p>{title}</p>
                 </div>
 
                 <div className={styles.taskTrashIcon}>

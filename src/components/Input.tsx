@@ -1,12 +1,17 @@
 import { ChangeEvent, useState } from "react"
 import styles from "./Input.module.css"
 
-export function Input(){
+interface InputProps{
+    handleSetTaskTitle: (taskTitle: string) => void
+}
+export function Input({handleSetTaskTitle}: InputProps){
+    
     const [inputText, setInputText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
     function handleInputTextChange(event: ChangeEvent<HTMLInputElement>){
         setInputText(event.target.value);
+        handleSetTaskTitle(event.target.value);
     }
 
     function handleOnFocus(){

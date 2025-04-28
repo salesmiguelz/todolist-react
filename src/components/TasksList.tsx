@@ -1,35 +1,47 @@
-import { useState } from "react";
 import Clipboard from "../assets/clipboard.svg"
 import styles from "./TasksList.module.css"
+import { Task, TaskType } from "./Task";
 
-export function TasksList(){
-    const [tasks, setTasks] = useState([]); 
+interface TasksListProps{
+    tasks: TaskType[]
+}
+
+export function TasksList({tasks}: TasksListProps){
     return (
           <div className={styles.tasksListContainer}>
             <div className={styles.tasksList}>
                     <div className={styles.tasksInfo}>
                         <div className={styles.tasksCreated}>
-                            <p>Tarefas criadas <span>0</span></p>
+                            <p>Tarefas criadas <span>{tasks.filter(task => !task.isDone).length}</span></p>
                         </div>
 
                         <div className={styles.tasksDone}>
-                            <p>Concluídas <span>2</span></p>
+                            <p>Concluídas <span>{tasks.filter(task => task.isDone).length}</span></p>
                         </div>
                     </div>
 
                     <hr />
-
                     {tasks.length > 0 ? (
-                        <h1>tasks</h1>
-                    ) : (
+                        <div className={styles.tasks}>
+                            {tasks.map(task => (
+                            <Task
+                                key={task.id}
+                                id={task.id}
+                                title={task.title}
+                                isDone={task.isDone}
+                            />
+                            ))}
+                        </div>
+                        ) : (
                         <div className={styles.noTasksMessage}>
                             <img src={Clipboard} alt="" />
                             <div className={styles.noTasksMessageText}>
-                                <p><b>Você ainda não tem tarefas cadastradas</b></p>
-                                <p>Crie tarefas e organize seus itens a fazer</p>
+                            <p><b>Você ainda não tem tarefas cadastradas</b></p>
+                            <p>Crie tarefas e organize seus itens a fazer</p>
                             </div>
                         </div>
-                    )}
+                        )}
+
                 </div>
             </div>
     )

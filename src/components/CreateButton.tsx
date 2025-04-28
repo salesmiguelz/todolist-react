@@ -1,10 +1,14 @@
 import styles from "./CreateButton.module.css"
 import { BsPlusCircle } from "react-icons/bs";
 
-export function CreateButton(){
+interface CreateButtonProps{
+    handleSetConfirmTaskCreation: () => void
+}
+
+export function CreateButton({handleSetConfirmTaskCreation}: CreateButtonProps){
     return (
     <>
-        <div className={styles.createButtonContainer}>
+        <div className={styles.createButtonContainer} onClick={handleSetConfirmTaskCreation}>
             <p>Criar</p>
 
             <div className={styles.createButtonIcon}>
