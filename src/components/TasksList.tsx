@@ -10,6 +10,7 @@ interface TasksListProps{
 
 
 export function TasksList({tasks, handleDeleteTask, handleToggleTaskDone}: TasksListProps){
+    const doneTasksCount = tasks.filter(task => task.isDone).length;
     return (
           <div className={styles.tasksListContainer}>
             <div className={styles.tasksList}>
@@ -19,7 +20,7 @@ export function TasksList({tasks, handleDeleteTask, handleToggleTaskDone}: Tasks
                         </div>
 
                         <div className={styles.tasksDone}>
-                            <p>Concluídas <span>{tasks.filter(task => task.isDone).length}</span></p>
+                            <p>Concluídas <span>{doneTasksCount} de {tasks.length}</span></p>
                         </div>
                     </div>
 
