@@ -2,15 +2,14 @@ import { ChangeEvent, useState } from "react"
 import styles from "./Input.module.css"
 
 interface InputProps{
+    taskTitle: string
     handleSetTaskTitle: (taskTitle: string) => void
 }
-export function Input({handleSetTaskTitle}: InputProps){
+export function Input({taskTitle, handleSetTaskTitle}: InputProps){
     
-    const [inputText, setInputText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
     function handleInputTextChange(event: ChangeEvent<HTMLInputElement>){
-        setInputText(event.target.value);
         handleSetTaskTitle(event.target.value);
     }
 
@@ -26,7 +25,7 @@ export function Input({handleSetTaskTitle}: InputProps){
             <input 
                 type="text" 
                 placeholder={"Adicione uma nova tarefa"} 
-                value={inputText} 
+                value={taskTitle} 
                 onChange={handleInputTextChange}
                 onFocus={handleOnFocus}
                 onBlur={handleOnBlur}

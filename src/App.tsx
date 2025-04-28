@@ -5,8 +5,8 @@ import { TaskType } from "./components/Task"
 import { useEffect, useState } from "react"
 
 function App() {
-  const [confirmTaskCreation, setConfirmTaskCreation] = useState(false);
   const [taskTitle, setTaskTitle] = useState('');
+  const [confirmTaskCreation, setConfirmTaskCreation] = useState(false);
   const [tasks, setTasks] = useState<TaskType[]>([]);
 
   useEffect(() => {
@@ -17,9 +17,13 @@ function App() {
           id: crypto.randomUUID(),
           title: taskTitle,
           isDone: false,
-          deleteTask: handleDeleteTask
+          deleteTask: handleDeleteTask,
+          toggleTaskDone: handleToggleTaskDone
         }
       ]);
+
+      setConfirmTaskCreation(false);
+      setTaskTitle('');
     }
   }, [confirmTaskCreation, taskTitle]);
 
@@ -47,6 +51,7 @@ function App() {
   return (
     <>
       <Navbar
+        taskTitle={taskTitle}
         handleSetTaskTitle={handleSetTaskTitle}
         handleSetConfirmTaskCreation={handleSetConfirmTaskCreation}
       />

@@ -4,17 +4,19 @@ import { Input } from "./Input"
 import { CreateButton } from "./CreateButton"
 
 interface NavbarProps {
+    taskTitle: string
     handleSetTaskTitle: (task: string) => void;
     handleSetConfirmTaskCreation: () => void;
 }
 
-export function Navbar({handleSetTaskTitle, handleSetConfirmTaskCreation}: NavbarProps){
+export function Navbar({taskTitle, handleSetTaskTitle, handleSetConfirmTaskCreation}: NavbarProps){
     return (
         <>
             <div className={styles.navbarContainer}>
                 <img src={logo} alt="" />
                 <div className={styles.inputContainer}>
                     <Input 
+                        taskTitle={taskTitle}
                         handleSetTaskTitle={handleSetTaskTitle}
                     />
                     <CreateButton 
