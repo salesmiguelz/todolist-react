@@ -5,16 +5,17 @@ import { Task, TaskType } from "./Task";
 interface TasksListProps{
     tasks: TaskType[]
     handleDeleteTask: (taskId: string) => void
+    handleToggleTaskDone: (taskId: string) => void
 }
 
 
-export function TasksList({tasks, handleDeleteTask}: TasksListProps){
+export function TasksList({tasks, handleDeleteTask, handleToggleTaskDone}: TasksListProps){
     return (
           <div className={styles.tasksListContainer}>
             <div className={styles.tasksList}>
                     <div className={styles.tasksInfo}>
                         <div className={styles.tasksCreated}>
-                            <p>Tarefas criadas <span>{tasks.filter(task => !task.isDone).length}</span></p>
+                            <p>Tarefas criadas <span>{tasks.length}</span></p>
                         </div>
 
                         <div className={styles.tasksDone}>
@@ -32,6 +33,7 @@ export function TasksList({tasks, handleDeleteTask}: TasksListProps){
                                 title={task.title}
                                 isDone={task.isDone}
                                 deleteTask={handleDeleteTask}
+                                toggleTaskDone={handleToggleTaskDone}
                             />
                             ))}
                         </div>

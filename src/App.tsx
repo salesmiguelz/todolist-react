@@ -20,8 +20,6 @@ function App() {
           deleteTask: handleDeleteTask
         }
       ]);
-      setConfirmTaskCreation(false); 
-      setTaskTitle('');
     }
   }, [confirmTaskCreation, taskTitle]);
 
@@ -32,6 +30,14 @@ function App() {
   function handleSetConfirmTaskCreation(){
     setConfirmTaskCreation(true);
  }
+
+ function handleToggleTaskDone(taskId: string) {
+  setTasks(prevTasks =>
+    prevTasks.map(task =>
+      task.id === taskId ? { ...task, isDone: !task.isDone } : task
+    )
+  );
+}
 
   function handleDeleteTask(taskId: string){
     setTasks(tasks => {
@@ -47,6 +53,7 @@ function App() {
       <TasksList 
         tasks={tasks}
         handleDeleteTask={handleDeleteTask}
+        handleToggleTaskDone={handleToggleTaskDone}
       />
     </>
   )

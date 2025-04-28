@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 
@@ -9,13 +8,12 @@ export interface TaskType{
     title: string
     isDone?: boolean
     deleteTask: (taskId: string) => void
+    toggleTaskDone: (taskId: string) => void
 }
 
-export function Task({id, title, isDone, deleteTask}: TaskType){
-    const [taskDone, setTaskDone] = useState(isDone);
-
+export function Task({id, title, isDone, deleteTask, toggleTaskDone}: TaskType){
     function handleTaskStatus(){
-        setTaskDone(!taskDone)
+        toggleTaskDone(id)
     }
     function handleDeleteTask(){
         deleteTask(id)
@@ -25,7 +23,7 @@ export function Task({id, title, isDone, deleteTask}: TaskType){
             <div className={styles.task} onClick={handleTaskStatus}>
                 <div className={styles.taskStatusIcon}>
                     {
-                        taskDone ? (
+                        isDone ? (
                             <div className={styles.taskDoneIcon}>
                                 <MdDone 
                                     size={12}
@@ -36,7 +34,7 @@ export function Task({id, title, isDone, deleteTask}: TaskType){
                         )
                     }
                 </div>
-                <div className={taskDone ? styles.taskCrossedText : styles.taskText}>
+                <div className={isDone ? styles.taskCrossedText : styles.taskText}>
                     <p>{title}</p>
                 </div>
 
