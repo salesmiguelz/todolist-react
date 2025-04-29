@@ -36,9 +36,7 @@ export function Task({id, title, isDone, deleteTask, toggleTaskDone}: TaskType){
                 </div>
                 <div className={isDone ? styles.taskCrossedText : styles.taskText}>
                         <p>
-                            {title.length > 80
-                                ? title.slice(0, 80) + "..."
-                                : title}
+                                {title}
                         </p>
                     </div>
 
