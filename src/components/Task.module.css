@@ -56,6 +56,9 @@
     width: 100%;
     padding-left: 30px;
     padding-right: 100px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .taskCrossedText {
@@ -67,6 +70,9 @@
     text-decoration: line-through;
     padding-left: 30px;
     padding-right: 100px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
@@ -83,4 +89,18 @@
     color: var(--danger);
     background-color: var(--gray-400);
     border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+
+    .taskText {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .taskText p {
+        width: 130%;
+        overflow: hidden;
+    }
+
 }

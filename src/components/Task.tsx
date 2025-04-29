@@ -35,8 +35,12 @@ export function Task({id, title, isDone, deleteTask, toggleTaskDone}: TaskType){
                     }
                 </div>
                 <div className={isDone ? styles.taskCrossedText : styles.taskText}>
-                    <p>{title}</p>
-                </div>
+                        <p>
+                            {title.length > 80
+                                ? title.slice(0, 80) + "..."
+                                : title}
+                        </p>
+                    </div>
 
                 <div className={styles.taskTrashIcon} onClick={handleDeleteTask}>
                     <FaRegTrashAlt 
