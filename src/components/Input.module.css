@@ -6,6 +6,7 @@
     padding: 0px 16px;
     width: 451px;
     height: 54px;
+    max-width: 50vw;
     border-radius: 4px;
     font-size: 16px;
 }
@@ -17,6 +18,7 @@
     outline: 2px solid var(--purple);
     padding: 0px 16px;
     width: 451px;
+    max-width: 50vw;
     height: 54px;
     border-radius: 8px;
     font-size: 16px;

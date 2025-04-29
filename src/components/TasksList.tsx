@@ -43,6 +43,7 @@ export function TasksList({tasks, handleDeleteTask, handleToggleTaskDone}: Tasks
                             <img src={Clipboard} alt="" />
                             <div className={styles.noTasksMessageText}>
                             <p><b>Você ainda não tem tarefas cadastradas</b></p>
+                            <br />
                             <p>Crie tarefas e organize seus itens a fazer</p>
                             </div>
                         </div>
